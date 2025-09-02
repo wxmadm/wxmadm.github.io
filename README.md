@@ -21,14 +21,16 @@ Medical image segmentation requires capturing <span style="color:#2980b9; font-w
 
 ## <span style="color:#d35400; font-weight:bold">🏗 Project Structure</span>
 
-├── builders/ # Model building scripts
-├── dataset/ # Data loading and preprocessing
-├── libs/ # Core library functions
-├── model/ # DBF-Net implementation
-├── utils/ # Utilities (metrics, visualization, etc.)
-├── train.py # Training pipeline
-├── test.py # Evaluation and inference
-└── README.md # Project documentation
+```
+├── builders/        # Model building scripts
+├── dataset/         # Data loading and preprocessing
+├── libs/            # Core library functions
+├── model/           # DBF-Net implementation
+├── utils/           # Utilities (metrics, visualization, etc.)
+├── train.py         # Training pipeline
+├── test.py          # Evaluation and inference
+└── README.md        # Project documentation
+```
 
 
 
