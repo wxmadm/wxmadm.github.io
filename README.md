@@ -39,18 +39,9 @@ Medical image segmentation requires capturing <span style="color:#2980b9; font-w
 ## <span style="color:#d35400; font-weight:bold">📄 Paper Information</span>
 
 **Title:** <span style="color:#e74c3c; font-weight:bold">DBF-Net: Dual-Branch Fusion Network for Medical Image Segmentation</span>  
-**Authors:** [Your Names Here]  
-**Journal/Conference:** [To be added]  
-**DOI:** [To be added]  
-
----
-
-## <span style="color:#d35400; font-weight:bold">⚡ Features</span>
-
-✔ <span style="color:#2ecc71; font-weight:bold">Dual-branch architecture</span> for <span style="color:#2980b9">local + global feature learning</span>  
-✔ <span style="color:#f1c40f; font-weight:bold">Feature Fusion Module</span> for multi-scale context integration  
-✔ Outperforms **U-Net**, **TransUNet**, and **Swin-UNet** in Dice and HD95  
-✔ Applicable to <span style="color:#9b59b6; font-weight:bold">2D medical image segmentation tasks</span>  
+**Authors:** [Guoping Xu; Xiaming Wu; Wentao Liao; Xinglong Wu; Qing Huang; Chang Li]  
+**Conference:** [2025 IEEE International Conference on Image Processing (ICIP)]  
+**DOI:** [10.1109/ICIP55913.2025.11084704]  
 
 ---
 
@@ -58,48 +49,52 @@ Medical image segmentation requires capturing <span style="color:#2980b9; font-w
 
 - Python ≥ 3.8  
 - PyTorch ≥ 1.8  
-- torchvision  
-- numpy  
-- SimpleITK  
-- tqdm  
-
-Install dependencies:
-```bash
-pip install -r requirements.txt
-
+- numpy==1.26.4  
+- timm==0.4.12
+- ptflops
+- imgaug
 
 <span style="color:#d35400; font-weight:bold">📂 Dataset</span>
+```
 
-Synapse multi-organ CT dataset
-
-ACDC cardiac MRI dataset
-
-Other datasets as needed
-
-Dataset preprocessing instructions can be found in dataset/README.md.
+├── train  
+├── dataset_train_list.txt  
+├── dataset_val_list.txt 
+└── dataset_test_list.txt             
+```
 
 <span style="color:#d35400; font-weight:bold">🚀 Usage</span>
 1. <span style="color:#3498db; font-weight:bold">Train the model</span>
-python train.py
+- python train.py
 
 2. <span style="color:#3498db; font-weight:bold">Test the model</span>
-python test.py
+- python test.py
 
 <span style="color:#d35400; font-weight:bold">🏆 Results</span>
-Synapse Dataset
-| Method                                                       | DSC ↑     | HD95 ↓    |
+BUSI Dataset
+| Method                                                       | DSC ↑     | HD ↓    |
 | ------------------------------------------------------------ | --------- | --------- |
-| <span style="color:#7f8c8d">U-Net</span>                     | 76.85     | 39.70     |
-| <span style="color:#2980b9">TransUNet</span>                 | 77.48     | 31.69     |
-| <span style="color:#e74c3c; font-weight:bold">DBF-Net</span> | **79.XX** | **15.XX** |
+| <span style="color:#7f8c8d">U-Net</span>                     | 65.19±7.19     | 9.93±0.17     |
+| <span style="color:#2980b9">DeepLabV3+</span>                 | 77.76±8.92     | 7.66±0.27     |
+| <span style="color:#2980b9">LinkNet</span>                 | 72.70±9.77     | 72.70±9.77     |
+| <span style="color:#2980b9">DBBS-Net</span>                 |9.34±9.43     | 8.05±0.32     |
+| <span style="color:#2980b9">UNeXt</span>                 | 78.17±2.57     | 8.16±0.39      |
+| <span style="color:#e74c3c; font-weight:bold">DBF-Net</span> | **81.05±10.44** | **7.35±0.27** |
 
 
 <span style="color:#d35400; font-weight:bold">🔍 Citation</span>
 
 If you find this work useful, please cite:
-@article{dbfnet2025,
-  title={DBF-Net: Dual-Branch Fusion Network for Medical Image Segmentation},
-  author={...},
-  journal={...},
-  year={2025}
-}
+```
+@INPROCEEDINGS{11084704,
+  author={Xu, Guoping and Wu, Xiaming and Liao, Wentao and Wu, Xinglong and Huang, Qing and Li, Chang},
+  booktitle={2025 IEEE International Conference on Image Processing (ICIP)}, 
+  title={DBF-Net: A Dual-Branch Network with Feature Fusion for Ultrasound Image Segmentation}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={211-216},
+  keywords={Deep learning;Image segmentation;Ultrasonic imaging;Accuracy;Codes;Anatomical structure;Artificial neural networks;Breast cancer;Brachytherapy;Lesions;Image segmentation;ultrasound;feature fusion},
+  doi={10.1109/ICIP55913.2025.11084704}}
+```
+
